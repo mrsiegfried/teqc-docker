@@ -5,7 +5,18 @@
     - non-free software (closed source)
     - free to use now (freeware)
 
-* Execute Environment:
+* How to use:
+
+```
+docker run -it sean0921/teqc /bin/bash
+teqc +help
+```
+
+if output help message shows, you can use it!
+
+* If you want to save the data, try to use `-v` option after docker command, to add use docker volume feature.
+
+* Execute Environment in Docker:
   + CentOS 6.10
   + You can change the Dockerfile to test in different environment
 
