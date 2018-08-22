@@ -7,9 +7,11 @@
 
 * How to use:
 
-```
+```sh
 docker run -it sean0921/teqc /bin/bash
-teqc +help
+teqc +help      #test teqc command
+runpkr00        #test runpkr00 command
+man runpkr00    #you can see manual of runpkr00 if you need
 ```
 
 if output help message shows, you can use it!
