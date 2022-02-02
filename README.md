@@ -12,18 +12,23 @@ Annoyed that `runpkr00` doesn't work on 64-bit machines or Apple Silicon? This i
 * How to use:
 
 ```sh
-docker run -it sean0921/teqc /bin/bash
+docker run -it --rm -v ~/:/home/user --name runpkr00 --platform linux/amd64 mrsiegfried/teqc-runprk00 /bin/bash
 teqc +help      #test teqc command
 runpkr00        #test runpkr00 command
 man runpkr00    #you can see manual of runpkr00 if you need
 ```
 
-if output help message shows, you can use it!
+if output help message shows, you can use it! Some notes on the flags:
 
-* If you want to save the data, try to use `-v` option after docker command, to add use docker volume feature.
+* `-it` 	access container in interactive mode
+* `--rm` 	removes container when you exit/stop
+* `-v`		mount a host folder. Above mounts `~/` from the host folder (your home directory) to `/home/user` which is the container home directory. So you can call folders like you would normally on your computer with a ~/. But you can adjust the mount and destination however you want (e.g., need to mount an external volume with T00 files).
+* `--name` give the container a name (in this case `runpkr00` for obvious reasons. If you are going to run a bunch of these containers, just let Docker name your containers.
+* `--platform` use a specific platform (in this case `linux/amd64`
 
-* Execute Environment in Docker:
-  + CentOS 6.10
+Execute Environment in Docker:
+
+  + CentOS 7
   + You can change the Dockerfile to test in different environment
 
 * Running Dependencies Information:
