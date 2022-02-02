@@ -1,4 +1,8 @@
-# TEQC in CentOS Docker
+# TEQC & runprk00 in CentOS Docker
+
+#### Edited by M.R. Siegfried (siegfried@mines.edu) 2 Feb 2022
+
+Annoyed that `runpkr00` doesn't work on 64-bit machines or Apple Silicon? This is for you. This let's you build and launch a Docker image that has `teqc` and `runpkr00` installed, along with a shell script `trim2dat_folder.sh` that will run `runpkr00` on all `.dat` files in the folder you currently reside. I will keep adding helper shell scripts as I have time (or send a pull request with new scripts. I will at some point test this for _offline_ use to make sure we can keep using this while we are in Antarctica. Thanks to Kiya Riverman for making me get off my butt to deal with a `runprk00` solution (and of course thanks to the four-year-ago insight of sean0921 to build this Dockerfile, from where I forked the initial code)
 
 * TEQC - The Toolkit for GPS/GLONASS/Galileo/SBAS/Beidou/QZSS/IRNSS Data 
   + According to [FAQ by UNAVCO](https://www.unavco.org/software/data-processing/teqc/faqs/faqs.html)

@@ -1,5 +1,5 @@
-FROM centos:6
-MAINTAINER sean0921
+FROM centos:7
+MAINTAINER mrsiegfried
 
 RUN  yum update -y    \
      && yum clean all  \
@@ -14,6 +14,14 @@ RUN mkdir /teqc \
     && unzip teqc_CentOSLx86_64d.zip  \
     && install -m 0755 teqc /usr/local/bin/ \
     && cd / && rm -rf /teqc
+
+RUN echo 'for f in `ls *.T0*`' > trim2dat_folder.sh \
+    && echo 'do' >> trim2dat_folder.sh \
+    && echo '  echo converting $f to .dat' >> trim2dat_folder.sh \
+    && echo '  runpkr00 -g -d $f' >> trim2dat_folder.sh \
+    && echo 'done' >> trim2dat_folder.sh \
+    && install -m 0755 trim2dat_folder.sh /usr/local/bin/ \
+    && rm -rf trim2dat_folder.sh
 
 RUN yum remove -y unzip
 
