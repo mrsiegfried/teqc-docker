@@ -6,7 +6,7 @@ RUN  yum update -y    \
      && yum install --nogpgcheck -y \
         unzip man
 
-RUN rpm -ivh http://kb.unavco.org/kb/assets/744/runpkr00-5.40-1trmb.i586.rpm
+RUN rpm -ivh https://unavco.knowledgebase.co/assets/744/runpkr00-5.40-1trmb.i586.rpm
 
 RUN mkdir /teqc \
     && cd /teqc  \

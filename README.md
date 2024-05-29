@@ -11,10 +11,21 @@ I will keep adding helper shell scripts as I have time (or send a pull request w
     - non-free software (closed source)
     - free to use now (freeware)
 
-* How to use:
+* How to use with remote docker image:
 
 ```sh
 docker run -it --rm -v ~/:/home/user --name runpkr00 --platform linux/amd64 mrsiegfried/teqc-runpkr00:master
+```
+
+* How to use with local docker image:
+
+```sh
+docker build -t runpkr00 .  # execute from the directory with Dockerfile to build a docker image
+docker run -it --rm -v ~/:/home/user runpkr00  # run the docker image you just created
+```
+
+* Test the docker container to make sure it runs teqc and runpkr00
+```
 teqc +help      #test teqc command
 runpkr00        #test runpkr00 command
 man runpkr00    #you can see manual of runpkr00 if you need
